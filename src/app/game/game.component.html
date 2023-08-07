@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body class="bg-azul-claro h-full ">
+
+
+<nav class="bg-azul-escuro">
+  <div class="mx-auto max-w-7xl px-2 lg:px-8">
+    <div class="relative flex h-16 justify-center">
+      <div class="flex flex-1 items-center justify-center">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="h-8 w-auto" src="./assets/personagem/moveRight.png" alt="Your Company">
+        </div>
+        <div class="">
+          <div class="flex space-x-4">
+            <span class="text-white rounded-md px-3 py-2 text-sm font-medium text-3xl" aria-current="page">PAC-CODE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="flex justify-center mt-4">
+
+  <div class="flex flex-col">
+
+    <!--game-->
+    <div class="">
+      <canvas #myCanvas height="400" width="960"></canvas>
+    </div>
+
+    <div class="flex flex-row gap-6">
+
+      <div class="flex flex-row gap-1.5 w-3/4">
+        <h3 class="font-bold text-xl text-azul-escuro">comandos</h3>
+        <div class="grid grid-cols-4 gap-1.5 mt-2">
+          <div class="" draggable="true" (dragstart)="onDragStart($event, 'up')"><img src="../../assets/icons/Cima.svg"></div>
+          <div class="" draggable="true" (dragstart)="onDragStart($event, 'down')"><img src="../../assets/icons/Baixo.svg"></div>
+          <div class="" draggable="true" (dragstart)="onDragStart($event, 'left')"><img src="../../assets/icons/Esquerda.svg"></div>
+          <div class="" draggable="true" (dragstart)="onDragStart($event, 'right')"><img src="../../assets/icons/Direita.svg"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-row gap-1.5">
+        <div class="flex flex-row gap-1.5">
+          <h3 class="font-bold text-xl text-azul-escuro">main</h3>
+          <div class="flex flex-row gap-1 mt-2" (drop)="onDrop($event, 'main')" (dragover)="onDragOver($event)">
+            <div class="bg-white w-10 h-10" >
+<!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+            <div class="bg-white w-10 h-10" >
+              <!--              <img [src]="getCommandImage(command)">-->
+            </div>
+          </div>
+        </div>
+        <button class="bg-azul-escuro text-azul-claro rounded-lg p-1 h-3/4 w-1/2 mt-2" mat-raised-button color="warn" (click)="deleteLastCommand()">Deletar</button>
+      </div>
+
+      <div class="">
+        <button class="bg-azul-escuro text-azul-claro text-xl p-1 rounded-lg h-full w-20 max-w-full" mat-raised-button color="primary" (click)="startAnimations()">Iniciar</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+</body>
+</html>
